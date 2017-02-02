@@ -23,6 +23,8 @@
  */
 package data.structures.review.datastructures.interfaces;
 
+import java.util.NoSuchElementException;
+
 /**
  *
  * @author Victor Santiago
@@ -33,9 +35,9 @@ public interface Stack<T> {
     
     public void push(T item);
     
-    public T pop();
+    public T pop() throws NoSuchElementException;
     
     public int size();
     
-    public T peek();
+    public T peek() throws NoSuchElementException;
 }

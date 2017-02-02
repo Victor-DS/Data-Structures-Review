@@ -25,6 +25,7 @@ package data.structures.review.datastructures;
 
 import data.structures.review.datastructures.interfaces.Node;
 import data.structures.review.datastructures.interfaces.Stack;
+import java.util.NoSuchElementException;
 
 /**
  *
@@ -56,7 +57,10 @@ public class MyStack<T> implements Stack<T> {
     }
 
     @Override
-    public T pop() {
+    public T pop() throws NoSuchElementException {
+        if(isEmpty())
+            throw new NoSuchElementException();
+        
         size--;
 
         T item = head.getData();        
@@ -66,7 +70,9 @@ public class MyStack<T> implements Stack<T> {
     }
 
     @Override
-    public T peek() {
+    public T peek() throws NoSuchElementException{
+        if(isEmpty()) throw new NoSuchElementException();
+        
         return head.getData();
     }
 
